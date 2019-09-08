@@ -1,10 +1,60 @@
 
 
-.filter-options {
-    display: flex;
-    flex-wrap: wrap;
+
+
+@media screen and (min-width:726px) {
+    #restaurants-list li {
+        border: 2px solid #ccc;
+        font-family: Arial,sans-serif;
+        margin: 1em;
+       }
+    .inside #restaurant-name {
+        font-size: 30pt;
+    }
+    .inside #restaurant-cuisine p {
+        font-size: 18pt;
+    }
+    .inside #restaurant-hours {
+        font-size: 15pt;
+    }
+
+} 
+
+@media screen and (min-width: 1294px) {
+    #restaurants-list li {
+        border: 2px solid #ccc;
+        font-family: Arial,sans-serif;
+        margin: 2em;
+        
+       }
 }
 
-@media screen and (min-width:600px) {
-
+@media screen and (min-width: 1300px ) {
+    .filter-options {
+        /* display: flex; */
+        width: 100%;
+        margin-top: 10px;
+        /* height: 50px; */
+        background-color: blue;
+        align-items: center;
+    }
+    .inside #restaurant-cuisine {
+        background-color: #333;
+        color: #ddd;
+        font-size: 12pt;
+        font-weight: 300;
+        letter-spacing: 10px;
+        margin: 0 0 20px;
+        padding: 2px 0;
+        text-align: center;
+        text-transform: uppercase;
+          width: 90%;
+      }
+    #restaurant-img {
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
+
