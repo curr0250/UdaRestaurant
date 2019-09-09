@@ -160,10 +160,13 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = restaurant.name;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
   const name = document.createElement('h1');
+  name.tabIndex = 0;
+  // name.setAttribute('aria-label', restaurant.name);
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -172,6 +175,8 @@ createRestaurantHTML = (restaurant) => {
   li.append(neighborhood);
 
   const address = document.createElement('p');
+  address.tabIndex = 0
+  // address.setAttribute('aria-label', restaurant.address);
   address.innerHTML = restaurant.address;
   li.append(address);
 
@@ -190,6 +195,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+    marker.setAttribute('aria-label', 'location on map of restaurant');
     marker.on("click", onClick);
     function onClick() {
       window.location.href = marker.options.url;
